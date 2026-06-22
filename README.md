@@ -11,11 +11,11 @@ and **ikinor** smart interactive boards.
 
 ```
 TkaMahoranElevatorWebDemo/
-├── index.html              ← the picker/viewer app (start here)
-└── prototypes/
-    ├── premium.html        ← Direction B · charcoal + champagne gold, serif, ascent beam
-    ├── cinematic.html      ← Direction D · blue-black + amber, animated skyline, video-ready hero
-    └── kinetic.html        ← Direction E · charcoal + blueprint cyan, live shaft simulation
+├── index.html        ← the picker/viewer app (start here)
+├── premium.html      ← Direction B · charcoal + champagne gold, serif, ascent beam
+├── cinematic.html    ← Direction D · blue-black + amber, animated skyline, video-ready hero
+├── kinetic.html      ← Direction E · charcoal + blueprint cyan, live shaft simulation
+└── README.md
 ```
 
 `index.html` frames each prototype in a switcher with desktop / tablet / mobile
