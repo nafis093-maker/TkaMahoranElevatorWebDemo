@@ -1,4 +1,4 @@
-# Energy King — Concept Directions (Web Demo)
+# Energy King Engineering — Concept Directions (Web Demo)
 
 A single web app that showcases **three design directions** for the Energy King
 elevator & smart-board website, so the client can compare them side by side and
@@ -11,10 +11,11 @@ and **ikinor** smart interactive boards.
 
 ```
 TkaMahoranElevatorWebDemo/
-├── index.html        ← the picker/viewer app (start here)
-├── premium.html      ← Direction B · charcoal + champagne gold, serif, ascent beam
-├── cinematic.html    ← Direction D · blue-black + amber, animated skyline, video-ready hero
-├── kinetic.html      ← Direction E · charcoal + blueprint cyan, live shaft simulation
+├── index.html          ← concept picker (start here)
+├── corporate.html      ← Corporate · light, navy + gold, trust-first
+├── architectural.html  ← Architectural · warm off-white, serif, gold accent
+├── kinetic.html        ← Kinetic · dark gold blueprint, echoes the logo
+├── signature.html      ← Signature · gold + chrome + black brand palette, Cinzel display
 └── README.md
 ```
 

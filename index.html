@@ -1,151 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Energy King — Concept Directions</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy King Engineering — Concept Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0B0D12;--bar:#13161D;--panel:#1A1E27;--line:rgba(255,255,255,.09);
-    --ink:#EEF1F6;--mute:#8b93a4;--accent:#5B8CFF;
-    --b:#C8A35B;--d:#FF9A4D;--e:#39E0E6; /* prototype accents */
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;overflow:hidden}
-  .grotesk{font-family:'Space Grotesk',sans-serif}
-  button{font-family:inherit;cursor:pointer}
-  a{color:inherit}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-  /* top bar */
-  .bar{flex:0 0 auto;background:var(--bar);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:0 18px;height:62px}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:16px;white-space:nowrap}
-  .brand .mk{width:30px;height:30px;border-radius:8px;background:linear-gradient(160deg,var(--d),#e0721f);color:#1a0e04;display:grid;place-items:center;font-size:15px}
-  .brand .sub{display:block;font-family:'Inter';font-weight:400;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
-
-  .switch{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:4px;gap:2px}
-  .switch button{display:flex;align-items:center;gap:9px;border:0;background:transparent;color:var(--mute);font-weight:600;font-size:13px;padding:9px 16px;border-radius:8px;transition:.16s;font-family:'Space Grotesk'}
-  .switch button .dot{width:9px;height:9px;border-radius:50%}
-  .switch button[data-k="premium"] .dot{background:var(--b)}
-  .switch button[data-k="cinematic"] .dot{background:var(--d)}
-  .switch button[data-k="kinetic"] .dot{background:var(--e)}
-  .switch button:hover{color:var(--ink)}
-  .switch button.active{background:var(--bg);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.05)}
-
-  .spacer{flex:1}
-  .tools{display:flex;align-items:center;gap:8px}
-  .devs{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:3px}
-  .devs button{border:0;background:transparent;color:var(--mute);padding:7px 11px;border-radius:7px;font-size:12px;font-weight:600}
-  .devs button.active{background:var(--bg);color:var(--ink)}
-  .open-btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 16px;font-weight:600;font-size:13px;text-decoration:none}
-  .open-btn:hover{filter:brightness(1.08)}
-
-  /* meta strip */
-  .meta{flex:0 0 auto;display:flex;align-items:center;gap:14px;padding:9px 20px;background:var(--bg);border-bottom:1px solid var(--line);font-size:13px;color:var(--mute)}
-  .meta b{color:var(--ink);font-family:'Space Grotesk'}
-  .meta .pip{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
-
-  /* stage */
-  .stage{flex:1;min-height:0;display:flex;align-items:flex-start;justify-content:center;background:
-     radial-gradient(120% 90% at 50% 0%,rgba(91,140,255,.06),transparent 60%),var(--bg);
-     padding:18px;overflow:auto}
-  .frame-shell{position:relative;width:100%;max-width:100%;height:100%;background:#000;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:max-width .35s ease;box-shadow:0 30px 80px -40px #000}
-  .frame-shell.tablet{max-width:834px}
-  .frame-shell.mobile{max-width:412px}
-  iframe{width:100%;height:100%;border:0;display:block;background:#000}
-  .loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--mute);font-size:13px;font-family:'Space Grotesk';pointer-events:none;opacity:0;transition:.2s}
-  .loading.show{opacity:1}
-  .loading .spin{width:26px;height:26px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px}
-  @keyframes spin{to{transform:rotate(360deg)}}
-
-  @media (max-width:880px){
-    .meta,.devs,.brand .sub{display:none}
-    .bar{flex-wrap:wrap;height:auto;padding:10px 14px;gap:12px}
-    .switch{order:3;width:100%;justify-content:space-between}
-    .switch button{flex:1;justify-content:center;padding:10px 8px}
-    .stage{padding:0}
-    .frame-shell{border-radius:0;border:0}
-    .frame-shell.tablet,.frame-shell.mobile{max-width:100%}
-  }
-</style>
-</head>
-<body>
-  <div class="bar">
-    <div class="brand"><span class="mk">▲</span><span>Energy King<span class="sub">Concept Directions</span></span></div>
-    <div class="switch" id="switch">
-      <button data-k="premium"  class="active"><span class="dot"></span> Premium</button>
-      <button data-k="cinematic"><span class="dot"></span> Cinematic</button>
-      <button data-k="kinetic"><span class="dot"></span> Kinetic</button>
-    </div>
-    <div class="spacer"></div>
-    <div class="tools">
-      <div class="devs" id="devs">
-        <button data-w="desktop" class="active">Desktop</button>
-        <button data-w="tablet">Tablet</button>
-        <button data-w="mobile">Mobile</button>
-      </div>
-      <a class="open-btn" id="openBtn" href="premium.html" target="_blank" rel="noopener">Open full page ↗</a>
-    </div>
+:root{--bar:#0A0D14;--panel:#141925;--line:rgba(255,255,255,.1);--ink:#EEF1F6;--mute:#8b93a4;--gold:#E0A93B}
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
+body{font-family:'Public Sans',sans-serif;background:#0C0F16;color:var(--ink);display:flex;flex-direction:column;overflow:hidden}
+.grotesk{font-family:'Space Grotesk',sans-serif}button{font-family:inherit;cursor:pointer}
+.bar{flex:0 0 auto;background:var(--bar);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:15px;white-space:nowrap}
+.brand .mk{width:40px;height:34px;border-radius:7px;background:#0A0D14;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.brand .mk img{height:26px}
+.switch{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:4px;gap:2px;margin-left:8px}
+.switch button{border:0;background:transparent;color:var(--mute);font-family:'Space Grotesk';font-weight:600;font-size:13px;padding:9px 16px;border-radius:7px}
+.switch button.active{background:#0C0F16;color:#fff}
+.spacer{flex:1}
+.open{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#15100a;border:0;border-radius:9px;padding:10px 16px;font-weight:600;font-size:13px;text-decoration:none;font-family:'Space Grotesk'}
+.meta{flex:0 0 auto;padding:9px 18px;background:#0C0F16;border-bottom:1px solid var(--line);font-size:13px;color:var(--mute)}
+.meta b{color:#fff;font-family:'Space Grotesk'}
+.stage{flex:1;min-height:0;background:#0C0F16}
+iframe{width:100%;height:100%;border:0;background:#fff}
+@media(max-width:760px){.meta{display:none}.brand small{display:none}}
+</style></head><body>
+<div class="bar">
+  <div class="brand"><span class="mk"><img src="data:image/jpeg;base64,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" alt=""></span> Energy King Engineering</div>
+  <div class="switch" id="switch">
+    <button data-k="corporate" class="active">Corporate</button>
+    <button data-k="architectural">Architectural</button>
+    <button data-k="kinetic">Kinetic</button>
+    <button data-k="signature">Signature</button>
   </div>
-
-  <div class="meta">
-    <span class="pip" id="metaPip"></span>
-    <span id="metaText"><b>Premium</b> — charcoal &amp; champagne gold, elegant serif, glowing ascent beam. Aspirational, high-end developments.</span>
-  </div>
-
-  <div class="stage">
-    <div class="frame-shell" id="shell">
-      <div class="loading" id="loading"><div><div class="spin"></div>Loading concept…</div></div>
-      <iframe id="frame" src="premium.html" title="Prototype preview" loading="eager"></iframe>
-    </div>
-  </div>
-
+  <div class="spacer"></div>
+  <a class="open" id="openBtn" href="corporate.html" target="_blank" rel="noopener">Open full page ↗</a>
+</div>
+<div class="meta" id="meta"><b>Corporate</b> — light, navy + gold, photo-led and trust-first. The most conventional, established-company look.</div>
+<div class="stage"><iframe id="frame" src="corporate.html" title="preview"></iframe></div>
 <script>
-  const data={
-    premium:{file:"premium.html",color:"var(--b)",label:"Premium",
-      desc:"charcoal &amp; champagne gold, elegant serif, glowing ascent beam. Aspirational, high-end developments."},
-    cinematic:{file:"cinematic.html",color:"var(--d)",label:"Cinematic",
-      desc:"deep blue-black with warm city-light amber, animated night-skyline hero, video-ready. Bold and dramatic."},
-    kinetic:{file:"kinetic.html",color:"var(--e)",label:"Kinetic",
-      desc:"charcoal with blueprint cyan &amp; safety orange, live blueprint mesh + working elevator-shaft sim. Pure engineering."}
-  };
-  const frame=document.getElementById('frame'),loading=document.getElementById('loading'),
-        openBtn=document.getElementById('openBtn'),metaPip=document.getElementById('metaPip'),
-        metaText=document.getElementById('metaText'),shell=document.getElementById('shell');
-
-  function select(k){
-    const d=data[k];if(!d)return;
-    document.querySelectorAll('#switch button').forEach(b=>b.classList.toggle('active',b.dataset.k===k));
-    loading.classList.add('show');
-    frame.src=d.file;
-    openBtn.href=d.file;
-    metaPip.style.background=d.color;
-    metaText.innerHTML='<b>'+d.label+'</b> — '+d.desc;
-    try{localStorage.setItem('ek_concept',k);}catch(e){}
-    location.hash=k;
-  }
-  frame.addEventListener('load',()=>loading.classList.remove('show'));
-
-  document.getElementById('switch').addEventListener('click',e=>{
-    const b=e.target.closest('button');if(b)select(b.dataset.k);
-  });
-  document.getElementById('devs').addEventListener('click',e=>{
-    const b=e.target.closest('button');if(!b)return;
-    document.querySelectorAll('#devs button').forEach(x=>x.classList.toggle('active',x===b));
-    shell.classList.remove('tablet','mobile');
-    if(b.dataset.w!=='desktop')shell.classList.add(b.dataset.w);
-  });
-  // keyboard 1/2/3
-  addEventListener('keydown',e=>{const m={'1':'premium','2':'cinematic','3':'kinetic'};if(m[e.key])select(m[e.key]);});
-
-  // initial: hash > saved > default
-  let start=(location.hash||'').replace('#','');
-  if(!data[start]){try{start=localStorage.getItem('ek_concept');}catch(e){}}
-  if(data[start]&&start!=='premium')select(start);
-</script>
-</body>
-</html>
+const data={
+ corporate:{f:"corporate.html",t:"Corporate",d:"light, navy + gold, photo-led and trust-first. The most conventional, established-company look."},
+ architectural:{f:"architectural.html",t:"Architectural",d:"warm off-white, serif headlines, gold accent. Premium and editorial."},
+ kinetic:{f:"kinetic.html",t:"Kinetic",d:"dark, gold blueprint engineering aesthetic that echoes the logo. Technical and bold."},
+ signature:{f:"signature.html",t:"Signature",d:"the brand palette itself \u2014 gold, chrome and black, Cinzel display. Premium and unmistakably on-logo."}
+};
+const frame=document.getElementById('frame'),meta=document.getElementById('meta'),openBtn=document.getElementById('openBtn');
+document.getElementById('switch').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ document.querySelectorAll('#switch button').forEach(x=>x.classList.toggle('active',x===b));
+ const d=data[b.dataset.k];frame.src=d.f;openBtn.href=d.f;meta.innerHTML='<b>'+d.t+'</b> — '+d.d;});
+</script></body></html>

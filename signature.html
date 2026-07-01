@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Energy King Engineering — Kinetic</title>
+<title>Energy King Engineering — Signature</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>:root{--bg:#0C0F16;--bg2:#11151E;--card:#141925;--nav-bg:rgba(12,15,22,.9);--ink:#fff;--body:#AEB8C6;--muted:#7E8794;
- --line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.17);--accent:#E0A93B;--accent-dark:#c4902b;--accent2:#E0A93B;--gold:#E0A93B;--accent-wash:rgba(224,169,59,.13);--on-accent:#15100a;
- --hero-bg:#0C0F16;--photo-bg:#161B25;--photo-ic:#5d6b7e;--photo-cap:#8a93a0;--photo-hatch:rgba(255,255,255,.02);
- --head-font:'Space Grotesk',sans-serif;--body-font:'Public Sans',sans-serif;--label-font:'Space Grotesk',sans-serif;--head-weight:700;--head-ls:-.02em;--radius:6px;--btn-radius:5px;}
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--bg:#08090D;--bg2:#0E1018;--card:#14161F;--nav-bg:rgba(8,9,13,.92);--ink:#F4F1E8;--body:#B7B4AB;--muted:#827E73;
+ --line:rgba(216,163,58,.16);--line2:rgba(255,255,255,.16);--accent:#D8A33A;--accent-dark:#bd8a29;--accent2:#C9CDD4;--gold:#D8A33A;--accent-wash:rgba(216,163,58,.12);--on-accent:#15100a;
+ --hero-bg:#08090D;--photo-bg:#14161F;--photo-ic:#6A6F7B;--photo-cap:#9a9e8f;--photo-hatch:rgba(255,255,255,.02);
+ --head-font:'Cinzel',serif;--body-font:'Jost',sans-serif;--label-font:'Jost',sans-serif;--head-weight:600;--head-ls:.03em;--radius:4px;--btn-radius:2px;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
@@ -208,7 +208,23 @@ footer .col a:hover{color:var(--gold)}
   .grid-2,.grid-3,.grid-4,.values,.steps,.two,.foot-top,.etype .cols{grid-template-columns:1fr}
   .wrap{padding:0 20px}
 }
-.hero{min-height:auto}.hero .wrap{position:relative;z-index:3}.hero-canvas{height:100%}</style></head><body>
+
+ h3,h4{font-family:'Jost',sans-serif;letter-spacing:0;font-weight:600}
+ h1,h2{background:linear-gradient(180deg,#fff 0%,#d6dae1 42%,#9398a2 56%,#eceef2 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+ .hero{position:relative;overflow:hidden}
+ .hero::before{content:"";position:absolute;right:6%;top:50%;transform:translateY(-50%);width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(216,163,58,.20),transparent 64%);z-index:1;pointer-events:none}
+ .hero h1 .accent{-webkit-text-fill-color:#E0B24A;color:#E0B24A;background:none}
+ .btn-primary{background:linear-gradient(180deg,#EAC264,#C4902B);color:#1a1206;border:1px solid rgba(255,255,255,.22);box-shadow:0 8px 22px -10px rgba(216,163,58,.55)}
+ .btn-primary:hover{background:linear-gradient(180deg,#f0cd78,#cf9a30)}
+ .nav-cta{background:linear-gradient(180deg,#EAC264,#C4902B)!important;color:#1a1206!important}
+ .hero-logo-wrap img{filter:drop-shadow(0 26px 54px rgba(216,163,58,.28))}
+ .sec-head h2::after{content:"";display:block;width:54px;height:2px;margin-top:16px;background:linear-gradient(90deg,#D8A33A,transparent)}
+ .sec-head.center h2::after{margin-left:auto;margin-right:auto}
+ .commit{background:linear-gradient(120deg,#171922,#0E1018);border:1px solid var(--line)}
+ .commit h3{background:linear-gradient(180deg,#fff,#c9cdd4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+ .commit .eyebrow{color:var(--gold)!important;opacity:1!important}
+ .value .ic,.card .ic,.success .ic{background:linear-gradient(180deg,rgba(216,163,58,.20),rgba(216,163,58,.05))}
+ </style></head><body>
 
 <div class="util"><div class="wrap">
   <a href="tel:+8801675450450"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +88 01675-450 450</a>
@@ -233,7 +249,7 @@ footer .col a:hover{color:var(--gold)}
     <a href="#projects">Projects</a><a href="#service">Service</a><a href="#smartboard">Smart Board</a>
     <a href="#contact" class="nav-cta">Get a Quote</a>
   </nav>
-</div></header><canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+</div></header>
 <section class="hero" id="home"><div class="wrap">
   <div class="reveal">
     <div class="slogan">Moving Forward · Engineering the Future</div>
@@ -428,7 +444,7 @@ footer .col a:hover{color:var(--gold)}
     <div class="col"><h4>Company</h4><a href="#about">About us</a><a href="#vmv">Vision &amp; values</a><a href="#projects">Projects</a><a href="#service">Service &amp; support</a></div>
     <div class="col"><h4>Contact</h4><a href="tel:+8801675450450">+88 01675-450 450</a><a href="mailto:sales@energyking.com">sales@energyking.com</a><a href="mailto:info@energykingengineering.com">info@energykingengineering.com</a><a href="#contact">Mirpur DOHS, Dhaka</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 Energy King Engineering</span><span>Concept: Kinetic (updated)</span></div>
+  <div class="foot-bottom"><span>© 2026 Energy King Engineering</span><span>Concept: Signature (brand colors)</span></div>
 </div></footer><script>
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.style.boxShadow=scrollY>10?'0 8px 24px -18px rgba(8,12,20,.6)':'none';},{passive:true});
@@ -449,16 +465,4 @@ form.addEventListener('submit',e=>{e.preventDefault();
 });
 document.getElementById('againBtn').addEventListener('click',()=>{form.reset();document.getElementById('successMsg').classList.remove('show');[...form.querySelectorAll('.field, button[type=submit], .two')].forEach(el=>el.style.display='');});
 
-
-(function(){const cv=document.getElementById('heroCanvas');if(!cv)return;const ctx=cv.getContext('2d');
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;let W,H,dpr=Math.min(devicePixelRatio||1,2),nodes=[],scanY=0;
-function size(){W=cv.width=innerWidth*dpr;H=cv.height=cv.offsetHeight*dpr;nodes=[];for(let i=0;i<40;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.22*dpr,vy:(Math.random()-.5)*0.22*dpr});}
-function frame(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#0b0e15';ctx.fillRect(0,0,W,H);const step=46*dpr;ctx.strokeStyle='rgba(224,169,59,.06)';ctx.lineWidth=1;
- for(let x=0;x<W;x+=step){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}for(let y=0;y<H;y+=step){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
- if(!reduce)nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;});
- for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<150*dpr){ctx.strokeStyle='rgba(224,169,59,'+(0.14*(1-d/(150*dpr)))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
- nodes.forEach(n=>{ctx.fillStyle='rgba(224,169,59,.5)';ctx.fillRect(n.x-dpr,n.y-dpr,2*dpr,2*dpr);});
- if(!reduce){scanY+=1.1*dpr;if(scanY>H)scanY=0;const g=ctx.createLinearGradient(0,scanY-40*dpr,0,scanY+40*dpr);g.addColorStop(0,'rgba(159,176,196,0)');g.addColorStop(.5,'rgba(159,176,196,.08)');g.addColorStop(1,'rgba(159,176,196,0)');ctx.fillStyle=g;ctx.fillRect(0,scanY-40*dpr,W,80*dpr);}
- requestAnimationFrame(frame);}
-addEventListener('resize',size);size();requestAnimationFrame(frame);})();
 </script></body></html>
